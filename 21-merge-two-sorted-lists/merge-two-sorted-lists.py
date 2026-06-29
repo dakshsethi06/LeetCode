@@ -1,6 +1,6 @@
 class Solution:
-    def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
-        dummy = ListNode(0)
+    def mergeTwoLists(self, list1, list2):
+        dummy = ListNode(-1)
         current = dummy
 
         while list1 and list2:
@@ -12,6 +12,6 @@ class Solution:
                 list2 = list2.next
             current = current.next
 
-        current.next = list1 or list2
-        
+        current.next = list1 if list1 else list2
+
         return dummy.next
